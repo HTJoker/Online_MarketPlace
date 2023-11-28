@@ -5,6 +5,7 @@ import { cookies } from "next/headers";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import Nav from "@/components/Nav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       <html lang="en">
         <body className={`font-sans ${inter.variable}`}>
           <TRPCReactProvider cookies={cookies().toString()}>
+            <Nav />
             {children}
           </TRPCReactProvider>
         </body>
