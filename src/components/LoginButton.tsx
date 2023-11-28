@@ -1,17 +1,18 @@
 "use client";
-import { SignOutButton, SignInButton, useUser } from "@clerk/nextjs";
+import { SignOutButton, SignInButton, useUser, UserButton } from "@clerk/nextjs";
+
 
 const LoginButton = () => {
   const user = useUser();
   return (
     <div className="cursor-pointer">
       {user.isSignedIn ? (
-        <SignOutButton>
-          <span className="bg-purple-200 px-2 py-1 rounded-md">Sign Out</span>
-        </SignOutButton>
+        <UserButton afterSignOutUrl="/"/>
       ) : (
         <SignInButton>
-          <span className="bg-purple-600 px-2 py-1 rounded-md">Sign In</span>
+          <span className="rounded-md bg-blue-600 px-2 py-1 text-white">
+            Sign In
+          </span>
         </SignInButton>
       )}
     </div>
