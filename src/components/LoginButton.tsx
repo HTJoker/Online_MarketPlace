@@ -8,7 +8,7 @@ const LoginButton = () => {
       {user.isSignedIn ? (
         <UserButton afterSignOutUrl="/" />
       ) : (
-        <div className="rounded-md bg-blue-600 p-1 text-white hover:bg-blue-400">
+        <div className="rounded-md bg-blue-600 px-2 py-1 text-white hover:bg-blue-400">
           <SignInButton>Sign In</SignInButton>
         </div>
       )}
